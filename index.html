@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Showcase</title>
+</head>
+<style>
+    body {
+        background-color:#6fb5b2;
+        font-family: Arial, sans-serif;
+    }
+    h1{
+        color:#17252a;
+    }
+    video{
+        border : solid black;
+        width: 70%;
+        height: auto;
+        display: flex;
+        position:relative;
+        margin: 0 auto;
+    }
+    .container {
+        text-align: center;
+    }
+    #displayed-image {
+      width: 70%;
+      height: 70%;
+      object-fit: cover;
+    }
+    button {
+        margin: 0 10px;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+    .buttons {
+        margin: 20px 5px 10px 10px;
+    }
+    
+    button {
+        margin: 0 10px;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+</style>
+<body>
+    <h1 align="center">Traveling salesman problem</h1>
+    <h3 align="center">The travelling salesman problem (TSP) asks the following question: <br>"Given a list of cities and the distances between each pair of cities, what is the shortest possible route that visits each city exactly once and returns to the origin city?"</h3>
+    <div class="container">
+        <div class="video-wrapper">
+            <video controls>
+                <source src="video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+    <div class="container">
+        <div class="buttons">
+            <button onclick="changeImage('image1.jpg')">Image 1</button>
+            <button onclick="changeImage('image2.jpg')">Image 2</button>
+            <button onclick="changeImage('image3.jpg')">Image 3</button>
+            <button onclick="changeImage('image4.jpg')">Image 4</button>
+        </div>
+        <img id="displayed-image" src="image1.jpg" alt="Image">
+    </div>
+
+    <script>
+        function changeImage(imageName) {
+            var displayedImage = document.getElementById('displayed-image');
+            displayedImage.src = imageName;
+        }
+    </script>
+</body>
+</html>
