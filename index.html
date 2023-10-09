@@ -10,8 +10,17 @@
         background-color:#6fb5b2;
         font-family: Arial, sans-serif;
     }
-    h1{
-        color:#17252a;
+    
+    .heading-container {
+        background: #17252a; 
+        color: #fff; 
+        text-align: center;
+        padding: 20px;
+    }
+    h1 {
+        margin: 0;
+        color:#ffffff;
+        padding: 0;
     }
     video{
         border : solid black;
@@ -25,8 +34,8 @@
         text-align: center;
     }
     #displayed-image {
-      width: 70%;
-      height: 70%;
+      width: 60%;
+      height: 60%;
       object-fit: cover;
     }
     button {
@@ -38,14 +47,39 @@
         margin: 20px 5px 10px 10px;
     }
     
-    button {
-        margin: 0 10px;
+    .stage-button {
+        color: #fff;
+        border: none;
         padding: 10px 20px;
+        margin: 5px;
+        border-radius: 50px;
+        background-color: #081d2b;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); 
         cursor: pointer;
+        transition: background-color 0.3s, box-shadow 0.3s; 
     }
+
+    .stage-button:hover {
+        background-color: #2980b9; 
+    }
+    .Name {
+            position: fixed;
+            top: 0;
+            right: 0;
+            background-color: #000000;
+            color: #fff;
+            padding: 10px;
+            width: 150px;
+        }
+
 </style>
 <body>
-    <h1 align="center">Traveling salesman problem</h1>
+    <div class="heading-container">
+        <h1 class="heading-text">Traveling salesman problem</h1>
+    </div>
+    <div class="Name">
+        <p>P.Amrutha<br>VU21CSEN0101493</p>
+    </div>
     <h3 align="center">The travelling salesman problem (TSP) asks the following question: <br>"Given a list of cities and the distances between each pair of cities, what is the shortest possible route that visits each city exactly once and returns to the origin city?"</h3>
     <div class="container">
         <div class="video-wrapper">
@@ -57,12 +91,12 @@
     </div>
     <div class="container">
         <div class="buttons">
-            <button onclick="changeImage('image1.jpg')">Image 1</button>
-            <button onclick="changeImage('image2.jpg')">Image 2</button>
-            <button onclick="changeImage('image3.jpg')">Image 3</button>
-            <button onclick="changeImage('image4.jpg')">Image 4</button>
+            <button class="stage-button" onclick="changeImage('image1.jpeg')">Stage 1</button>
+            <button class="stage-button" onclick="changeImage('image2.jpeg')">Stage 2</button>
+            <button class="stage-button" onclick="changeImage('image3.jpeg')">Stage 3</button>
+            <button class="stage-button" onclick="changeImage('image4.jpeg')">Stage 4</button>
         </div>
-        <img id="displayed-image" src="image1.jpg" alt="Image">
+        <img id="displayed-image" src="image1.jpeg" alt="Image">
     </div>
 
     <script>
