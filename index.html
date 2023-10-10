@@ -1,95 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Video Showcase</title>
-    <style>
-        body {
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        .heading-container {
-            background: #3498db;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-        }
-
-        h1 {
-            margin: 0;
-            padding: 0;
-        }
-
-        h3 {
-            text-align: center;
-            margin: 20px 15% 20px 15%;
-        }
-
-        .Name {
-            position: fixed;
-            top: 0;
-            right: 0;
-            background-color: #2ecc71;
-            color: #fff;
-            padding: 4px;
-            width: 150px;
-            text-align: center;
-        }
-
-        .container {
-            text-align: center;
-            margin-top: 20px;
-            margin-bottom: 40px;
-        }
-
-        .video-wrapper {
-            margin-bottom: 20px;
-        }
-
-        video {
-            border: 1px solid #3498db;
-            width: 70%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-        }
-
-        .buttons {
-            margin-bottom: 20px;
-        }
-
-        .stage-button {
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            margin: 5px;
-            border-radius: 50px;
-            background-color: #3498db;
-            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            transition: background-color 0.3s, box-shadow 0.3s;
-        }
-
-        .stage-button:hover {
-            background-color: #2980b9;
-        }
-
-        #displayed-image {
-            width: 60%;
-            height: auto;
-            object-fit: cover;
-            border: 1px solid #3498db;
-            border-radius: 5px;
-        }
-    </style>
 </head>
+<style>
+    body {
+        background-color: #f0f0f0;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
 
+    .heading-container {
+        background: #3498db;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+    }
+
+    h1 {
+        margin: 0;
+        padding: 0;
+    }
+
+    h3 {
+        text-align: center;
+        margin: 20px 15% 20px 15%;
+    }
+
+    .Name {
+        position:fixed;
+        top: 0;
+        right: 0;
+        background-color: #2ecc71;
+        color: #fff;
+        padding: 0.3%;
+        width: 13%;
+        text-align: center;
+    }
+
+    .container {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 40px;
+    }
+
+    .video-wrapper {
+        margin-bottom: 20px;
+    }
+
+    video {
+        border: 1px solid #3498db;
+        width: 70%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .buttons {
+        margin-bottom: 20px;
+    }
+
+    .stage-button {
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        margin: 5px;
+        border-radius: 50px;
+        background-color: #3498db;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        transition: background-color 0.3s, box-shadow 0.3s;
+    }
+
+    .stage-button:hover {
+        background-color: #2980b9;
+    }
+
+    #displayed-image {
+        width: 60%;
+        height: auto;
+        object-fit: cover;
+        border: 1px solid #3498db;
+        border-radius: 5px;
+    }
+    .algorithm-container {
+        background: #3498db;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+        margin-top: 40px;
+    }
+
+    .algorithm-heading {
+        margin: 0;
+        padding: 0;
+    }
+
+    .algorithm-code {
+        text-align: left;
+        margin-top: 20px;
+        white-space: pre;
+        font-size:x-large;
+    }
+</style>
 <body>
+    <script>
+        function changeImage(imageName) {
+            var displayedImage = document.getElementById('displayed-image');
+            displayedImage.src = imageName;
+        }
+    </script>
     <div class="heading-container">
         <h1 class="heading-text">Traveling salesman problem</h1>
     </div>
@@ -100,7 +123,7 @@
     <div class="container">
         <div class="video-wrapper">
             <video controls>
-                <source src="amrutha.MP4" type="video/mp4">
+                <source src="amrutha.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
@@ -113,12 +136,17 @@
         <img id="displayed-image" src="image1.jpeg" alt="Image">
     </div>
 
-    <script>
-        function changeImage(imageName) {
-            var displayedImage = document.getElementById('displayed-image');
-            displayedImage.src = imageName;
-        }
-    </script>
+    
+    <div class="algorithm-container">
+        <h2 class="algorithm-heading">Algorithm</h2>
+        <pre class="algorithm-code">
+            Approx-TSP (G= (V, E)) {
+            Compute a MST T of G;
+            Select any vertex r is the root of the tree;
+            Let L be the list of vertices visited in a preorder tree walk of T;
+            Return the Hamiltonian cycle H that visits the vertices in the order L; }
+        </pre>
+    </div>
 </body>
 
 </html>
